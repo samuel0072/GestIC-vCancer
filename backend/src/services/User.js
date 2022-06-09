@@ -97,7 +97,7 @@ class User {
         try {
             var requestProfile = undefined;
             if (profile == "Estudante") {
-                userProfile = await db.profile.findOne({
+                requestProfile = await db.profile.findOne({
                     where: {
                         tag: "ALUN",
                     },

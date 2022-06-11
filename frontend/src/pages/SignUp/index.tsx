@@ -12,6 +12,11 @@ import { useRef } from 'react';
 import * as E from './styles';
 import { CustomInput } from '../../components/CustomInput';
 import { api } from '../../services/api';
+import { DarkBox, LightBox, LightContainer, DarkContainer, DarkSecondaryText, LightSecondaryText } from './styles'
+
+
+
+
 
 const schema = yup.object().shape({
   name: yup.string().required('Nome é obrigatório'),
@@ -86,9 +91,34 @@ const SignUp = () => {
     }
   };
 
+  const [time, setTime] = React.useState(Date.now());
+
+  let theme = window.localStorage.getItem("theme");
+
+  React.useEffect(() => {
+    const interval = setInterval(() => setTime(Date.now()), 100);
+    return () => {
+      theme = window.localStorage.getItem("theme");
+      clearInterval(interval);
+    };
+
+  }, []);
   return (
-    <E.Container>
-      <E.Box>
+    <div
+
+      style={
+        theme === 'light' ? LightContainer : DarkContainer
+
+      }
+
+    >
+      <Box
+        style={
+          theme === 'light' ? LightBox : DarkBox
+
+        }
+
+      >
         <form onSubmit={handleSubmit(onSubmit)}>
           <Stack spacing={2}>
             <Controller
@@ -126,7 +156,7 @@ const SignUp = () => {
               defaultValue=""
               render={({ field }) => (
                 <FormControl isInvalid={!!errors?.profile?.message} errortext={errors?.profile?.message}>
-                  <FormLabel htmlFor={field.name}>profile</FormLabel>
+                  <FormLabel htmlFor={field.name}>Profile</FormLabel>
                   <select value={profile} onChange={event => setProfile(event.target.value)}>
                     <option value="Estudante">Estudante</option>
                     <option value="Monitor">Monitor</option>
@@ -186,8 +216,8 @@ const SignUp = () => {
             </Link>
           </Box>
         </form>
-      </E.Box>
-    </E.Container>
+      </Box>
+    </div>
   );
 };
 

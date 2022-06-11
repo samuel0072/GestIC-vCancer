@@ -21,6 +21,7 @@ import { AddIcon } from '@chakra-ui/icons';
 import { Page } from '../../../components/Page';
 import { useAuth } from '../../../providers/AuthProvider';
 import { api } from '../../../services/api';
+import { DarkText, LightText } from './theme'
 
 interface groupData {
   id: string;
@@ -66,6 +67,19 @@ const GruposPesquisa = () => {
 
   React.useEffect(() => {
     getAllGroups();
+  }, []);
+
+  const [time, setTime] = React.useState(Date.now());
+
+  let theme = window.localStorage.getItem("theme");
+
+  React.useEffect(() => {
+    const interval = setInterval(() => setTime(Date.now()), 100);
+    return () => {
+      theme = window.localStorage.getItem("theme");
+      clearInterval(interval);
+    };
+
   }, []);
 
   const handleChange = event => {
@@ -118,27 +132,46 @@ const GruposPesquisa = () => {
           <Table variant="simple">
             <Thead>
               <Tr>
-                <Th>Nome</Th>
-                <Th>Descrição</Th>
+                <Th style={
+                  theme === 'light' ? LightText : DarkText
+                } >Nome</Th>
+                <Th
+                  style={
+                    theme === 'light' ? LightText : DarkText
+                  }
+                >Descrição</Th>
               </Tr>
             </Thead>
             <Tbody>
               {groupsSearch.map(group => {
                 return (
                   <Tr key={group.id}>
-                    <Td>
+                    <Td
+                      style={
+                        theme === 'light' ? LightText : DarkText
+                      }
+                    >
                       <Link display="block" href={`grupos-de-pesquisa/show/${group.id}`}>
                         {group.name}
                       </Link>
-                    </Td>
-                    <Td>{group.description}</Td>
+                    </Td
+                    >
+                    <Td
+                      style={
+                        theme === 'light' ? LightText : DarkText
+                      }
+                    >{group.description}</Td>
                   </Tr>
                 );
               })}
             </Tbody>
           </Table>
         ) : (
-          <Text>Não há grupos de pesquisa cadastrados</Text>
+          <Text
+            style={
+              theme === 'light' ? LightText : DarkText
+            }
+          >Não há grupos de pesquisa cadastrados</Text>
         )}
       </Box>
     </Page>

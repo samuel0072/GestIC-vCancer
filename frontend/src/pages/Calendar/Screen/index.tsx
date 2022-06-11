@@ -32,6 +32,19 @@ const CalendarPage = () => {
       setIsLoading(false);
     }
   };
+  const [time, setTime] = React.useState(Date.now());
+
+  let theme = window.localStorage.getItem("theme");
+
+  React.useEffect(() => {
+    const interval = setInterval(() => setTime(Date.now()), 100);
+    return () => {
+      theme = window.localStorage.getItem("theme");
+      clearInterval(interval);
+    };
+
+  }, []);
+
 
   React.useEffect(() => {
     getEventList();
@@ -60,7 +73,14 @@ const CalendarPage = () => {
             events={eventList}
             startAccessor="start"
             endAccessor="end"
-            style={{ height: 500 }}
+            style={{
+
+              height: 500,
+              color: theme === "light" ? 'black' : 'teal'
+
+
+
+            }}
           />
         </Box>
         <Box mt={8} color="teal">

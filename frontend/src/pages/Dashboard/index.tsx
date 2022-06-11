@@ -8,6 +8,7 @@ import Informative from '../../components/Informative';
 import { Page } from '../../components/Page';
 import { DarkBox_1, LightBox_1, LightBox_2 } from './theme';
 import { useState, useEffect } from 'react';
+import Helmet from 'react-helmet';
 
 const Dashboard = () => {
   const [isLargerThan766] = useMediaQuery('(max-width: 766px)');
@@ -27,10 +28,15 @@ const Dashboard = () => {
 
   return (
 
+
     <Page
+
     >
 
-      <Box textAlign="center" fontSize="xl" p={8}>
+      <Box textAlign="center" fontSize="xl" p={8}
+        color={theme === "light" ? 'black' : 'teal'}
+
+      >
         <SimpleGrid columns={[1, null, 2]} minH="100%" spacing={8} justifyItems="center">
           <Informative />
           {!isLargerThan766 && (
@@ -115,7 +121,8 @@ const Dashboard = () => {
           )}
         </SimpleGrid>
       </Box>
-    </Page>
+    </Page >
+
   );
 };
 

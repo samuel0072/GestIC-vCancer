@@ -12,6 +12,7 @@ export const LightSimpleGrid = {
     padding: "4px",
     gridTemplateColumns: "0.5fr 1fr",
     alignItems: "center",
+
 }
 
 export const DarkSimpleGrid = {
@@ -24,6 +25,8 @@ export const DarkSimpleGrid = {
     padding: "4px",
     gridTemplateColumns: "0.5fr 1fr",
     alignItems: "center",
+    borderWidth: '0 0 1px 0px',
+    borderColor: 'teal'
 }
 
 export const DarkDrawerContent = {
@@ -34,6 +37,7 @@ export const DarkDrawerContent = {
 export const LightDrawerContent = {
     background: "teal",
     color: "white",
+
 }
 
 

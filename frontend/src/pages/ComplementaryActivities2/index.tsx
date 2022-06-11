@@ -14,6 +14,7 @@ import {
   Input,
   InputRightElement,
   Text,
+
 } from '@chakra-ui/react';
 import { useHistory } from 'react-router';
 import { BsSearch } from 'react-icons/bs';
@@ -85,10 +86,10 @@ const ComplementaryActivities = () => {
               ?.toLowerCase()
               .includes(
                 value.toLowerCase() ||
-                  activity?.group?.toLowerCase().includes(value.toLowerCase()) ||
-                  activity?.hours?.toLowerCase().includes(value.toLowerCase()) ||
-                  activity?.start?.toLowerCase().includes(value.toLowerCase()) ||
-                  activity?.end?.toLowerCase().includes(value.toLowerCase()),
+                activity?.group?.toLowerCase().includes(value.toLowerCase()) ||
+                activity?.hours?.toLowerCase().includes(value.toLowerCase()) ||
+                activity?.start?.toLowerCase().includes(value.toLowerCase()) ||
+                activity?.end?.toLowerCase().includes(value.toLowerCase()),
               )
           );
         });
@@ -99,6 +100,18 @@ const ComplementaryActivities = () => {
     }
   };
 
+  const [time, setTime] = React.useState(Date.now());
+
+  let theme = window.localStorage.getItem("theme");
+
+  React.useEffect(() => {
+    const interval = setInterval(() => setTime(Date.now()), 100);
+    return () => {
+      theme = window.localStorage.getItem("theme");
+      clearInterval(interval);
+    };
+
+  }, []);
   return (
     <Page>
       <Box p={8}>
@@ -162,7 +175,12 @@ const ComplementaryActivities = () => {
             </Tbody>
           </Table>
         ) : (
-          <Text>Não há atividades cadastradas</Text>
+          <Text
+            style={{
+              color: theme === 'light' ? 'black' : 'teal'
+            }}
+
+          >Não há atividades cadastradas</Text>
         )}
       </Box>
     </Page>

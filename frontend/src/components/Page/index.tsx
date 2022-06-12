@@ -27,7 +27,7 @@ const Page = ({ children }: Props) => {
       style={{
         height: "100vh",
         paddingTop: !isLargerThan768 ? 'initial' : '3.5rem',
-        backgroundColor: theme === 'light' ? 'black' : 'black',
+        backgroundColor: theme === 'light' ? 'black' : 'white',
         overflow: 'hidden',
         left: '0',
         width: '100%',

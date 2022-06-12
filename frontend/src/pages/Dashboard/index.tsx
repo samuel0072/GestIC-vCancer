@@ -34,14 +34,14 @@ const Dashboard = () => {
     >
 
       <Box textAlign="center" fontSize="xl" p={8}
-        color={theme === "light" ? 'black' : 'teal'}
+        color={theme === "light" ? 'black' : '#192A51'}
 
       >
         <SimpleGrid columns={[1, null, 2]} minH="100%" spacing={8} justifyItems="center">
           <Informative />
           {!isLargerThan766 && (
             <Box w="70%">
-              <Link color="teal" href="/informacoes-uteis" _focus={{ boxShadow: 'none' }}>
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}} href="/informacoes-uteis" _focus={{ boxShadow: 'none' }}>
                 <Box
                   style={theme === "light" ? LightBox_2 : DarkBox_1}
                 >
@@ -51,8 +51,8 @@ const Dashboard = () => {
                   </Heading>
                 </Box>
               </Link>
-              <Link color="white" href="/calendario" _focus={{ boxShadow: 'none' }}>
-                <Box mb={2} p="1px" bgColor="teal">
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}} href="/calendario" _focus={{ boxShadow: 'none' }}>
+                <Box mb={2} p="1px" bgColor="#192A51">
                   <Box
                     style={LightBox_1}
 
@@ -64,7 +64,7 @@ const Dashboard = () => {
                   </Box>
                 </Box>
               </Link>
-              <Link color="teal" href="/projetos-ativos" _focus={{ boxShadow: 'none' }}>
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}}  href="/projetos-ativos" _focus={{ boxShadow: 'none' }}>
                 <Box
                   style={theme === "light" ? LightBox_2 : DarkBox_1}
 
@@ -75,8 +75,8 @@ const Dashboard = () => {
                   </Heading>
                 </Box>
               </Link>
-              <Link color="white" href="/grupos-de-pesquisa" _focus={{ boxShadow: 'none' }}>
-                <Box mb={2} p="1px" bgColor="teal">
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}}  href="/grupos-de-pesquisa" _focus={{ boxShadow: 'none' }}>
+                <Box mb={2} p="1px" bgColor="#192A51">
                   <Box
                     style={LightBox_1}
                   >
@@ -87,7 +87,7 @@ const Dashboard = () => {
                   </Box>
                 </Box>
               </Link>
-              <Link color="teal" href="/ofertas-disciplinas" _focus={{ boxShadow: 'none' }}>
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}}  href="/ofertas-disciplinas" _focus={{ boxShadow: 'none' }}>
                 <Box
                   style={theme === "light" ? LightBox_2 : DarkBox_1}
                 >
@@ -97,8 +97,8 @@ const Dashboard = () => {
                   </Heading>
                 </Box>
               </Link>
-              <Link color="white" href="/complementary-activities/list" _focus={{ boxShadow: 'none' }}>
-                <Box mb={2} p="1px" bgColor="teal">
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}}  href="/complementary-activities/list" _focus={{ boxShadow: 'none' }}>
+                <Box mb={2} p="1px" bgColor="#192A51">
                   <Box
                     style={LightBox_1}
                   >
@@ -109,7 +109,7 @@ const Dashboard = () => {
                   </Box>
                 </Box>
               </Link>
-              <Link color="teal" href="/montar-horario" _focus={{ boxShadow: 'none' }}>
+              <Link style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}}  href="/montar-horario" _focus={{ boxShadow: 'none' }}>
                 <Box style={theme === "light" ? LightBox_2 : DarkBox_1}>
                   <Icon as={AiFillSchedule} fontSize="2rem" mr={2} />
                   <Heading fontSize="md" textTransform="uppercase">

@@ -53,7 +53,7 @@ const CalendarPage = () => {
   return (
     <Page>
       <Box p={8} pt={isLargerThan766 ? 10 : 8} mb={16}>
-        <Heading color="teal" textAlign="center" mr={2}>
+        <Heading style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}} textAlign="center" mr={2}>
           Calendário
         </Heading>
         {user && (
@@ -61,7 +61,7 @@ const CalendarPage = () => {
             mt={4}
             leftIcon={<AddIcon />}
             onClick={() => history.push('eventos/new')}
-            colorScheme="teal"
+            colorScheme="#192A51"
             variant="outline"
           >
             Criar evento
@@ -73,17 +73,10 @@ const CalendarPage = () => {
             events={eventList}
             startAccessor="start"
             endAccessor="end"
-            style={{
-
-              height: 500,
-              color: theme === "light" ? 'black' : 'teal'
-
-
-
-            }}
+            style={{height: 500, color: theme === "light" ? '#192A51' : '#192A51', backgroundColor: theme === "light" ? 'white' : 'white  '}}
           />
         </Box>
-        <Box mt={8} color="teal">
+        <Box mt={8} style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}}>
           <Link href="/eventos">Ver lista e pesquisar por todos os eventos</Link>
         </Box>
       </Box>

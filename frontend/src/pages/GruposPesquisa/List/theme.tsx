@@ -1,7 +1,7 @@
 export const DarkText = {
-    color: 'teal'
+    color: '#F5E6E8'
 }
 
 export const LightText = {
-    color: 'dark'
+    color: '#192A51'
 }

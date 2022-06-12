@@ -104,7 +104,7 @@ const GruposPesquisa = () => {
       <Box p={8}>
         <Box display="flex" mb={10} flexDirection="column" justifyContent="space-between" margin="auto">
           <Box display="flex" w="100%" mb={4} alignItems="center" justifyContent={user ? 'space-between' : 'left'}>
-            <Heading color="teal" textAlign="center" mr={2}>
+            <Heading style={{color: theme === "light" ? '#192A51' : '#F5E6E8'}} textAlign="center" mr={2}>
               Grupos de Pesquisa
             </Heading>
             {user && (
@@ -120,7 +120,7 @@ const GruposPesquisa = () => {
           </Box>
 
           <Box minW="20%" w="25%" mb={user ? 6 : 0}>
-            <InputGroup color="teal">
+            <InputGroup style={{color: theme === "light" ? '#192A51' : '#192A51'}}>
               <Input placeholder="Buscar" bg="white" onChange={handleChange} />
               <InputRightElement>
                 <BsSearch />

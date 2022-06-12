@@ -5,10 +5,11 @@ export const DarkBox = {
 
 
 export const LightBox_1 = {
-    background: "teal",
-    borderColor: "white",
+    background: "#192A51",
+    borderColor: "#192A51",
     padding: "16px",
     display: "flex",
+    color: "#F5E6E8",   
     alignItems: "center",
     justifyContent: "center",
     marginBottom: "2px"

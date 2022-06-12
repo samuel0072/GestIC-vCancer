@@ -8,7 +8,9 @@ export const LightContainer = {
   justifyContent: 'center',
   height: '100vh',
   width: '100vw',
-  background: 'aquamarine',
+  background: '#192A51',
+  border: "1px",
+  borderColor: 'white',
 }
 
 export const LightBox = {
@@ -22,6 +24,7 @@ export const LightBox = {
   padding: '20px',
   margin: '20px',
   borderRadius: '10px',
+  color: '#192A51'
 }
 
 
@@ -29,7 +32,7 @@ export const DarkContainer = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: 'teal',
+  color: 'white',
   height: '100vh',
   width: '100vw',
 
@@ -57,5 +60,5 @@ export const DarkSecondaryText = {
 }
 
 export const LightSecondaryText = {
-  color: 'black'
+  color: '#192A51'
 }

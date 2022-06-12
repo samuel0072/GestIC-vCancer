@@ -7,8 +7,8 @@ export const LightSimpleGrid = {
     display: "flex",
     justifyContent: "space-between",
     width: "100%",
-    background: "teal",
-    color: "white",
+    background: '#192A51',
+    color: "#F5E6E8",
     padding: "4px",
     gridTemplateColumns: "0.5fr 1fr",
     alignItems: "center",
@@ -21,22 +21,22 @@ export const DarkSimpleGrid = {
     justifyContent: "space-between",
     width: "100%",
     background: "#121212",
-    color: "teal",
+    color: "#F5E6E8",
     padding: "4px",
     gridTemplateColumns: "0.5fr 1fr",
     alignItems: "center",
     borderWidth: '0 0 1px 0px',
-    borderColor: 'teal'
+    borderColor: '#F5E6E8'
 }
 
 export const DarkDrawerContent = {
     background: "#121212",
-    color: "teal",
+    color: "#F5E6E8",
 }
 
 export const LightDrawerContent = {
-    background: "teal",
-    color: "white",
+    background: '#192A51',
+    color: "#F5E6E8",
 
 }
 

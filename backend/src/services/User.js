@@ -203,6 +203,9 @@ class User {
             }
             let user = await db.user.findByPk(id);
             if (!user) throw new Error("User not found.");
+            if (old_password && new_password) {
+                await this.change_password({ id, old_password, new_password });
+            }
             await db.user.update(
                 {
                     name: name ? name : user.name,
@@ -216,9 +219,6 @@ class User {
                     },
                 }
             );
-            if (old_password && new_password) {
-                this.change_password({ id, old_password, new_password });
-            }
             user = await db.user.findByPk(id);
             return { ...user.get(), password: "*******" };
         } catch (err) {

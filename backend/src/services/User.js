@@ -61,7 +61,7 @@ class User {
         try {
             const user = await db.user.findOne({
                 where: {
-                    email,
+                    user_email: email,
                 },
             });
 
